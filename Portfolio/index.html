@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Portofolio Nazlul</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <!-- Mobile menu button -->
+  <button class="menu-btn" id="menuBtn">
+    <i class="fas fa-bars"></i>
+  </button>
+  
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-bg"></div>
+    </aside>
+    
+    <!-- Main content -->
+    <main class="content">
+      <!-- Header -->
+      <header class="header">
+        <img src="images/Almamater USK.jpg" alt="Profile" class="profile-img" id="profileImg">
+        <h1 class="jumbo-text">Muhammad Nazlul Ramadhyan</h1>
+        <p>Informatics Student</p>
+      </header>
+      
+      <!-- Portfolio section -->
+      <section id="portfolio">
+        <h2 class="section-title">My Portfolio</h2>
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <img src="images/IMG1.jpg" alt="Volunteering">
+          </div>
+          <div class="portfolio-item">
+            <img src="images/IMG_Building.jpg" alt="Beach">
+          </div>
+          <div class="portfolio-item">
+            <img src="images/IMG_2.jpg" alt="IKI">
+          </div>
+          <div class="portfolio-item">
+            <img src="images/IMG_Beach.jpg" alt="Beach">
+          </div>
+          <div class="portfolio-item">
+            <img src="images/IMG_Fort.jpg" alt="Fort">
+          </div>
+          <div class="portfolio-item">
+            <img src="images/IMG_Beach2.jpg" alt="Beach 2">
+          </div>
+        </div>
+      </section>
+      
+      <!-- About section -->
+      <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p></p> I am an Informatics student at Syiah Kuala University with a strong passion for technology, especially in networking and GIS. I am interested in coding, data, and digital innovation, and always eager to learn and grow. Additionally, I am active in campus organizations and occasionally unwind by playing games. 🚀
+        </p>
+        
+      <!-- Contact section -->
+      <section id="contact">
+        <h2 class="section-title">Contact Me</h2>
+        
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>Banda Aceh, Indonesia</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div>Phone: +62 852xxxxxxx</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div>Email: mail@mhs.usk.ac.id</div>
+          </div>
+        </div>
+        
+        <p>Let's get in touch. Send me a message:</p>
+        <form action="/action_page.php" target="_blank">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Name" required name="Name">
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="Email" required name="Email">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Subject" required name="Subject">
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" placeholder="Message" required name="Message" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn">
+            <i class="fas fa-paper-plane"></i> SEND MESSAGE
+          </button>
+        </form>
+      </section>
+      
+      <!-- Footer -->
+      <footer>
+        <div class="social-icons">
+          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/nazlulramadhyan/" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-snapchat-ghost"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="www.linkedin.com/in/muhammad-nazlul-ramadhyan/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </footer>
+    </main>
+  </div>
+  
+  <script>
+    // Simple JavaScript for toggling sidebar on mobile
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.getElementById('sidebar');
+    const profileImg = document.getElementById('profileImg');
+    
+    menuBtn.addEventListener('click', function() {
+      sidebar.classList.toggle('active');
+    });
+    
+    // Close sidebar when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!sidebar.contains(event.target) && event.target !== menuBtn) {
+        sidebar.classList.remove('active');
+      }
+    });
+    
+    // Handle responsive layout
+    function handleResize() {
+      if (window.innerWidth <= 992) {
+        profileImg.style.display = 'block';
+      } else {
+        profileImg.style.display = 'none';
+        sidebar.classList.remove('active');
+      }
+    }
+    
+    // Run on load and resize
+    window.addEventListener('load', handleResize);
+    window.addEventListener('resize', handleResize);
+  </script>
+</body>
+</html>
